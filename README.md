@@ -25,20 +25,20 @@ Finally, go to `OAuth2/URL Generator` and generate a bot invite url, then add th
 
 First, clone this repository:
 
-```
+```console
 git clone https://github.com/qhwi/Hweplir
 ```
 ### Dependency
 
 - discord.py 2.x
-```
+```console
 pip install discord.py
 ```
 - Python 3.8 or newer
 
 ### Config
 Hweplir requires some secret environment variables:
-```
+```python
 TOKEN=
 SERVER_ID=
 ```
@@ -51,7 +51,7 @@ Finally, **create a role** named **`<<<VIEW_ALL_CTF>>>`** in your server. **Copy
 ### Free Hosting on Repl
 
 Install Flask:
-```
+```console
 pip install Flask
 ```
 
