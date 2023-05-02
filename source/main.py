@@ -10,8 +10,8 @@ import utils, ctftime, Buttons
 ### Need .env with SERVER_ID and TOKEN
 SERVER_ID = discord.Object(id=os.getenv("SERVER_ID"))
 BOT_TOKEN = os.getenv("TOKEN")
-VIEW_ALL_CTF_ROLEID = None ### Need A <<<VIEW_ALL_CTF>>> ROLE ID and ASSIGN that role to bot #1083652173591740417
-LOG_CHANNELID = None ###Need LOG CHANNEL ID if want to enable logging #1079813269142896730
+VIEW_ALL_CTF_ROLEID = None ### Need A <<<VIEW_ALL_CTF>>> ROLE ID and ASSIGN that role to bot
+LOG_CHANNELID = None ###Need LOG CHANNEL ID if want to enable logging
 
 class MyBot(discord.Client):
     def __init__(self, *, intents: discord.Intents):

@@ -6,7 +6,9 @@ This bot makes use of the new Discord slash command and Buttons using `discord.p
 
 Contribution and suggestion is highly welcome:)
 
+
 # Setup
+
 
 ## Create the bot
 
@@ -14,7 +16,7 @@ First, head to <a href="https://discord.com/developers/applications">Discord's D
 
 Next, config your bot information in the `General Information` and `Bot` section.
 
-Note: make sure to toggle on the `Gateway Intents`+ Copy the bot's `TOKEN` and store it somewhere safe for now.
+Note: make sure to enable all Intents + Copy the bot's `TOKEN` and store it somewhere safe for now.
 
 Finally, go to `OAuth2/URL Generator` and generate a bot invite url, then add the bot to your server!
 
@@ -26,7 +28,6 @@ First, clone this repository:
 ```
 git clone https://github.com/qhwi/Hweplir
 ```
-
 ### Dependency
 
 - discord.py 2.x
@@ -36,15 +37,18 @@ pip install discord.py
 - Python 3.8 or newer
 
 ### Config
-Hweplir requires some environment variables:
+Hweplir requires some secret environment variables:
 ```
 TOKEN=
 SERVER_ID=
+VIEW_ALL_CTF_ROLEID=
+LOG_CHANNELID=
 ```
-Copy your saved bot's TOKEN  and ID of the desired server, to create `.env` file that defined the required variables. 
+Copy your saved bot's TOKEN and ID of the desired server, to **create `.env` file** that defined the required variables. 
 
 Alternatively, you can just replace the value directly in `main.py` :P
 
+Finally, **create a role** named **`<<<VIEW_ALL_CTF>>>`** in your server. **Copy** the Role ID and replace it in `main.py`. Also **assign** this role to your bot.
 
 ### Hosting for free using Repl
 
@@ -66,6 +70,9 @@ def keep_alive():
 ```
 
 Then using services such as UptimeRobot to ping the app every 5 minutes:) Run `main.py` as normal.
+
+Note: Instead of create `.env` file, simply create new Secret for `TOKEN` and `SERVER_ID`.
+
 
 # Commands
 
