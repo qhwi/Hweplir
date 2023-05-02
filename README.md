@@ -71,5 +71,7 @@ Then using services such as UptimeRobot to ping the app every 5 minutes:) Run `m
 
 To show commands list, use `/help`. To read command's description and required variables, just type `/` and scroll through each.
 
+<img src="https://github.com/qhwi/Hweplir/blob/main/image/help.png" width="400">
+
 *[To be Updated]*
  
