@@ -1,9 +1,8 @@
 import discord
-from discord.ext import commands
 from discord import app_commands
 import os, json, logging
 from time import time
-from typing import Literal, Optional
+from typing import Literal
 
 import utils, ctftime, Buttons
 
@@ -40,15 +39,20 @@ async def on_ready():
 
 ### SLASH commands tree
 @bot.tree.command()
-async def help(ctx: discord.Interaction):
+@app_commands.describe(
+    command='Tên command cụ thể để xem chi tiết')
+async def help(ctx: discord.Interaction, command: Literal['list','view','reg','regacc','info_find','info_upco','info_ongo','admin-reg_special','admin-delete','admin-add','admin-hide'] = None):
     """Hiển thị list các command của mình"""
-    embedVar = utils.create_embed(
-        title="Commands List",
-#        description="/help [tên command] để biết thêm chi tiết",
-        fields=['🚩 CTFTime /ct', '✨ Chung /c', '🔒 Admin'],
-        values=['`info_find` | `info_upco` | `info_ongo` | `reg` | `regacc`', '`list` | `view`', '`add` | `delete` | `hide` | `reg-special`'],
-        footer='Suggest/Report lỗi liên hệ Hwi#9932')
-    await ctx.response.send_message(embed=embedVar, ephemeral=True)
+    if command != None:
+        embedVar = utils.help(command)
+    else:
+        embedVar = utils.create_embed(
+            title="Commands List",
+            description="*/help [tên command] để biết thêm chi tiết*",
+            fields=['🚩 CTFTime /ct', '✨ Chung /c', '🔒 Admin'],
+            values=['`info_find` | `info_upco` | `info_ongo` | `reg` | `regacc`', '`list` | `view`', '`add` | `delete` | `hide` | `reg-special`'])
+    #        footer='Suggest/Report lỗi liên hệ Hwi#9932')
+    await ctx.response.send_message(embed=embedVar)
 
 @bot.tree.command(name="ct-info_find")
 @app_commands.rename(searchkey='search-key')
