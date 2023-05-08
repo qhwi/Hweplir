@@ -1,5 +1,9 @@
-/help
+### ❔ **/help** (*command*)
+
 Hiển thị list tên các command
+
+Parameter:
+- `command` (Optional): Chọn 1 command bất kì để xem kĩ thông tin
 
 ## 1. [CTFTime] Commands
 
